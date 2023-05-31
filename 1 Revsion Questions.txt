@@ -1,0 +1,1145 @@
+1)Which command in Linux that is used to print information about the system and its environment?
+->$uname
+
+2)Which command in Linux that is used to get more info about system?
+->$uname --help
+
+3)Which command is used to print the ip address?
+->$ifconfig
+
+4)If ifconfig is not getting recognize by the system then which package we have to install,again what will be the command?
+->$sudo yum install net-tools
+
+5)How to check the user-name in linux?
+->$whoami 
+
+6)How to check the machine os,which command is used?
+->$cat /etc/os-release
+
+7)How to print the shell name?
+->$echo $SHELL or $echo $0
+
+8)Which command in Linux is used to determine the execution time of a given command or process?Also give one example
+->time command_name 
+Example:-time ls
+
+9)Which command is used to list down all the available shells ?
+->cat /etc/shells
+
+10)Give names of any two shells?
+->/bin/sh
+/bin/bash
+/usr/bin/sh
+/usr/bin/bash
+
+11)If we want to shift to sh shell,which command we have to use?
+->sh
+
+12)Which command is used to check current shell ?
+->echo $0
+
+13)How to check host name?
+->hostname
+
+14)Which command is used to check user and userinfo?
+->cat /etc/passwd
+
+15)What is the id of root user?
+->0
+
+16)In which range system users have their id?
+->1-999
+
+17)What is the id of ec2-user?
+->1000
+
+18)In which range normal users have their id?  
+->Above 1000 (1001-1999)
+
+The range in which group id exist?
+Above 2000
+
+19)Which command is used to print current working directory?
+->$pwd
+
+20)Which command is used to print the string?
+->$echo 
+
+21)How to check the reboot time of the system?
+->$who -b
+$uptime -s
+$last reboot
+
+22)How to change the name date time?
+->$ sudo date -s 'Fri Apr 14 09:30:00 AM UTC 2002'
+
+19)Which command is used to display the manual page of a command?
+->$man command_name 
+Example man ls
+
+20)Use of mandb
+-> Used to create or update the manual page database on the system
+
+21)The command in Linux is used to locate the executable file that will be executed when a given command is run in the shell.
+Shows the full path of the command.
+->$which ls
+
+22)The command that shows the directories that your shell will search through when you entered a command
+->$echo $USER or $whoami
+
+23)How to change the name ,primaray prompt,secondary prompt?
+->$PS1='Adhiraj'
+$PS2='@'
+
+24)How to create a user?Create one user
+->$sudo useradd username
+$sudo useradd adhiraj
+
+25)How to change the password of newly created user?Change the password of adhiraj user
+->$sudo passwd username
+$sudo passwd adhiraj
+
+26)How to delete the user?
+->$sudo userdel username
+
+27)How to clean delete a user?
+->$sudo userdel -r username
+
+28)How to create a hidden file?
+->touch .file_name
+
+29)In Linux, which file is the encrypted password file
+->sudo cat /etc/shadow
+
+30)How to add a group?
+->$sudo groupadd demo
+
+31)If you want to create a group with a specific group ID then which command have to be used?Also give example
+->$sudo groupadd -g group_id group_name  or $sudo groupadd --gid groupid groupname 
+$sudo groupadd -g 1009 demo  or $sudo groupadd --gid 1009 demo
+
+32)How to change the group ID of existing group?Change the ID of demo group which you have created earlier
+->$sudo groupmod -g new_ID groupname
+$sudo groupmod -g 1111 demo
+
+33)If we want to rename the group name,then how to do it?Change the name of demo group which you have created earlier and rename it to test
+->$sudo groupmod -n new_name oldername
+$sudo groupmod -n test demo
+
+34)How to add a user in a group?Add a user name adhiraj to your test group
+-> $sudo usermod - aG groupname username
+ $sudo usermod -aG test adhiraj
+
+35)How to remove a user from group?Remove user adhiraj from test group
+->$sudo gpasswd --delete username groupname
+$sudo gpasswd --delete adhiraj test
+
+36)How to delete a group?Delete group test
+->$sudo groupdel test
+
+37)Which command is used to list the contents in the current working directory?
+->$ls
+
+38)Which command is used to list the data according to time?
+->$ls -lt
+
+39)Which command is used to list the data accroding to time but in reverse order?
+->$ls -ltr
+
+40)How we can see the hidden files present in the directory?Create a hidden file first and then display it
+->By using ls -a
+$touch .hidden.txt
+$ls -a
+
+41)How to list down the files created by a specific author?
+->$ls --author
+
+42)How to sort as well as list down all the contents in current working directory?
+->$ls -s
+
+43)How to list down the files of particular extenstion?List down all the files of txt format
+->$ls *.txt
+
+44)How to change the directory?Suppose you have to change it to folder1
+->cd folder1
+
+45)How to move to the home directory?
+->$cd ~
+
+46)How to change the current working directory to the root directory?
+->$cd/
+
+47)How to move to the previously used directory?
+->$cd ..
+
+48)How to open a file?
+->$cat filename
+
+49)Create a new file name new.txt using cat command and insert a data into it
+->$cat > new.txt
+An apple a day keeps doctor away.
+
+50)Now append data in new.txt file using cat command.
+->$cat>>new.txt
+I love apple.
+
+51)How to add line numbers to non blank lines.
+->$cat -b filename
+
+52)How to add line numbers to blank as well as to non blank lines.
+->$cat -n filename
+
+53)Which command is used to sort a file?
+->$sort filename
+
+54)How we can sort files f1.txt ,f2.txt, f3.txt
+->$sort f1.txt f2.txt f3.txt
+
+55)How to sort a file in reverse order?
+->$sort -r filename
+
+56)How to sort a file without caring about case sensitivity?
+->$sort -f filename
+
+57)How to sort numerical data on the basic of their true value in maths?
+->$sort -n filename
+
+58)Suppose you have file named as data.txt and having content
+apple,1020,aurangabad,Maharashtra
+mango,422,washim,Gujrat
+potato,85,pune,Goa
+
+Sort the data according to third column
+->$sort -t "," -k3 data.txt
+
+59)Sort the data in data.txt according to second column 
+->$sort -t "," -k2 data.txt
+
+60)Sort the data in data.txt according to second column,but on the basic of mathematical value.
+->$sort -t "," -nk2 data.txt
+
+61)Sort the data in data.txt according to second column,but on the basic of mathematical value but in reverse order.
+->$sort -t "," -nrk2 data.txt
+
+62)Sort the file and also print the no of occurence of elements.
+->$sort filename | uniq -c
+
+63)Sort the file and also shows no of duplicates also print the duplicate elements.
+->$sort filename | uniq -cd
+
+64)Sort the file and also shows duplicate elements.
+->$sort filename | uniq -d
+
+65)In vi mode which symbol along with colon is used to save the data?
+->	:w
+
+66)In In vi mode which symbol along with colon is used to quit without saving the data?
+->	:q!
+
+67)In vi mode which symbol along with colon is used to save the data and quit from the file?
+->	:wq
+
+68)In vi mode which symbol along with colon is used to quit without saving the data?
+->	:q!
+
+69)In vi mode which how we can go to the 10th line?
+->	:10
+
+70)In vi mode which how we can go to the last line?
+->	:$
+
+71)In vi mode ,if we want the numbering for each line for an example
+hello		--->		1 hello
+hii				2 hii
+				3
+how are you			4 how are you 
+
+which command can be used?
+->:set nu
+
+72)Now we want to remove the numbering which we set in earlier question,then which command can be used?
+->:set nonu
+
+73)How to search in a file opend using vi mode?
+->/search_word
+
+74)For example, let's say you have a file named example.txt with the following contents:
+This is an example text file
+with some random words in it.
+
+If you want to search for the word "example" in a case-insensitive manner, then which command can be used?
+->:set ic
+/EXAMPLE
+
+
+75)How to To turn off case-insensitive search.
+->:set noic
+
+76)How to replace a existing word with new word in vi mode?
+->%s/existing_word/new_word
+
+77)How to replace a existing word with new word in vi mode(Replace all occurane in each line)
+->%s/existing_word/new_word/g
+
+78)What is the difference between %s/existing_word/new_word and %s/existing_word/new_word/g?
+->
+
+79)Write a command to replace a a word madhu with lalita (Replace all occurances within 20 and 30th line)
+->20,30s/madhu/lalita
+
+80)Command mode (Movement of cursor around the file) "h" is used for
+->Move one char left side
+
+81)Command mode (Movement of cursor around the file) "j" is used for
+->Move one line down
+
+82)Command mode (Movement of cursor around the file) "k" is used for
+->Move one line up
+
+83)Command mode (Movement of cursor around the file) "l" is used for
+->Move one char right side
+
+84)Command mode (Movement of cursor around the file) "w" is used for
+->Move one word in forward direction
+
+85)Command mode (Movement of cursor around the file) "b" is used for
+->Move one word in backward direction
+
+86)Command mode (Movement of cursor around the file) "$" is used for
+->Move to the last char of the lineCommand mode (Movement of cursor around the file) "h" is used for
+
+87)Command mode (Movement of cursor around the file) "^" is used for
+->Move to the begining char of the current line
+
+88)Command mode (Movement of cursor around the file) "0" is used for
+->Move to the very begining of the current line
+
+89)Command mode (Movement of cursor around the file) "G" is used for
+->Move to the last line of the file
+
+90)Command mode (Movement of cursor around the file) "gg" is used for
+->Move to the first line of the file
+
+91)Write a command to move 5th char left side
+->5h
+
+92)Write a command to move 6 line down
+->6j
+
+93)Write a command to move 3 line up
+->3k
+
+94)Write a command to move 4 char right side
+->4l
+
+95)Write a command to move 5 word in forward direction
+->5w
+
+96)Write a command to move 8 word in backward direction
+->8b
+
+97)Which char is used to copy
+->y
+
+98)Which char is used to paste
+->p
+
+99)Which char is used to delete
+->d
+
+100)How to search a word in command mode 
+->/word
+
+101)If we want to search a word in command mode in forward direction then which char we have to press?
+->n
+
+102)If we want to search a word in command mode in backward direction then which char we have to press?
+->N
+
+103)List down all the insert modes commands
+->i I a A o O s S
+
+104)The command which is used to check whether there is any modification in the file or not?
+->$md5sum filename
+
+105)Which command is used to split the file?
+->$split filename
+
+106)Write a command to split a file on the basic of no of lines.Split the file try.txt and each file should contain 4 lines
+->$split -no_of_line filename
+$split -4 try.txt
+
+107)Write a command to split a file on the basic of bytes.Split the file try.txt and each file should contain 426723 byte
+->split -b byte_value filename
+split -b 426723 try.txt
+
+108)Write a command to split a file on the basic of no of chunks.Split the file try.txt into 3 files.
+->$split -n no_of_files filename
+$split -n 3 try.txt
+
+109)Which command is used to set default permissions for files or directories that are created by user?
+->$umask
+
+110)Which command is used to translate the characters?
+->$tr
+
+111)Write a command to convert all the vovels which are in small letters to capital letters in the given sentence and print that newly translated sentence.
+"Man is Mortal"
+->$echo "Man is Mortal" |tr 'aeiou' 'AEIOU'
+
+112)Write a command to convert 'abcd' '!@*%' in the given sentence.
+"I love apples,dog,cat and banana".
+->$echo "I love apples,dog,cat and banana" |tr 'abcd' '!@*%'
+
+113)Write a command if we want to delete a specific character from the string using tr command.
+"Man is Mortal"
+Delete all the vowels .
+->$echo "Man is Mortal" |tr -d 'aeiou'
+
+114)Write a command to delete all the vowels from fruits.txt file using .
+->$cat fruits.txt | tr -d 'aeiou'
+
+115)Write a command to squeeze all 'o'to single o
+"Helloooo Brooooo"
+->$echo "Helloooo Brooooo" |tr -s 'o' 'o'
+
+116)Write a command to squeeze 'lo' 'lo'
+"Hellllloooooooooo Brrroooooo"
+->$echo "Hellllloooooooooo Brrroooooo" |tr -s 'lo' 'lo'
+
+117)Write a command to change space -> tab
+"Hello my name is sakshi"
+->$echo "Hello my name is sakshi" | tr ' ' '\t'
+
+118)Write a command to print each word in new line
+"Hello my name is sakshi sawalikar"
+->$echo "Hello my name is sakshi" | tr ' ' '\n'
+
+119)How to find file in directory using whole path. Path= /home/ec2-user/folder1 and filename that you have to search is f1.txt
+->$find full_path -name 'filename'
+$find /home/ec2-user/folder1 -name 'filename'
+
+120)How to get the last 10 lines of a file.Display last 10 lines of file try.txt
+->tail try.txt
+
+121)How to get the last 3 lines of a file.Display last 3 lines of file try.txt
+->tail -n 3 try.txt
+
+122)How to get first 10 lines of a file.Display the first 10 lines of file try.txt
+->head try.txt
+
+123)How to get the first 5 lines of file.Display the first 5 lines of file try.txt
+
+->head -n 5 try.txt
+
+124)Sort the each word of a file try.txt
+->cat try.txt| tr -s ' ' '/n' | sort
+
+125)Sort the file try.txt according the occurence (count) of the each word in the file and then display the word having highest count and comes last after sorting .
+->cat try.txt | tr -s ' ' '/n' | sort |uniq -c |sort -n |tail -n 1
+
+126)Sort the file try.txt according the occurence (count) of the each word in the file and then display first word having highest count and comes first after sorting .
+->cat try.txt | tr -s ' ' '/n' | sort |uniq -c |sort -n |head -n 1
+
+127)Which command is used in linux to view the content of text file one pg at a time.Use that command to view the file f5.txt
+->$more f5.txt
+
+128)Write a command to search a word (pavbhaji)in a text file named as try.txt using less command.
+->$less try.txt 
+/pavbhaji
+
+129)Supppose we have a txt file named as f1 having data
+A B C D ------------M N O
+And we want to print the data in the middle(E F G H) then write a command for this task,
+->$head -n 8 f1.txt|tail -n 4
+
+130)Suppose we have f2.txt having 10000 records and we want from 500 to 510 then
+->$head -n 510 f2.txt | tail -n 11
+
+131)Write a command to copy 5000 lines from f2.txt into f3.txt
+->$head -n 5000 f2.txt > f3.txt
+
+132)Write a command to see no of lines ,word count and characters of file try.txt
+->$wc try.txt
+
+133)If we want to see numbers of line only ,then write a command for it.
+->$wc -l try.txt
+
+134)If we want to see numbers of word count only ,then write a command for it.
+->$wc -w try.txt
+
+135)If we want to see numbers of no of characters only ,then write a command for it.
+->$wc -c try.txt
+
+136)Write a command to extract specific fields from emp.txt having data
+FPT1,ADHI, SCIENCE
+MPT2,SAKSHI,MATHS
+HPT3,SHRUTI,BCOM
+
+Write a command to get the output as 
+FPT1,
+MPT2,
+HPT3,
+->$cut -c 1-5 emp.txt
+
+137)Write a command to get the output as 
+FPT1
+MPT2
+HPT3
+->$cut -c 1-4 emp.txt
+
+138)Write a command to extract specific fields from emp.txt having data and write that extracted data into another txt file.
+Write a command to get the output as 
+FPT1,
+MPT2,
+HPT3,
+and save it into another file named as f1.txt
+->$cat emp.txt | cut -c 1-5 > f1.txt
+
+139)Write a command to extract 2-5 fields from emp.txt having data and write that extracted data into another txt file named as f1.txt
+->$cat emp.txt |cut -c 2-5 >f1.txt
+
+140)Write a command to extract 3-10 fields from emp.txt having data and write that extracted data into another txt file named as f1.txt
+->$cat emp.txt |cut -c 3-10 >f1.txt
+
+141)Write a command to display the content of files f1.txt f2.txt f3.txt vertically using paste command
+->$paste f1.txt f2.txt f3.txt
+
+142)Write a command to display following output using cut command for emp.txt file
+Output:-FPT1
+MPT2
+HPT3
+->cut -d "," -f2 emp.txt
+
+143)Write a command to display following output using cut command for emp.txt file to display third column.
+->$cut -d "," -f3 emp.txt
+
+144)Write a command to redirect the output of date command save the output in m2.txt
+->$date > m2.txt or date 1>m.txt
+
+145)Write a command to redirect the output of a command save the error in m2.txt
+->$dates 2>m2.txt
+
+146)Write a command to see the process that are currently active.
+->$ps
+
+147)Print the shell name where processes are currently running.
+->$echo $0
+
+148)Write a command to print process id
+->$echo $$
+
+149)How to check in which terminal we are?
+->$tty
+
+150)Which command is used in Linux to display a detailed list of currently running processes in a full format.
+->$ps -f
+
+151)Which command in Linux is a real-time process monitoring tool that provides a dynamic overview of the system's current resource usage, including
+ CPU, memory, and other system statistics. 
+->$top
+
+152)What is the use of -e also give one example.
+->If we want to print a word or line in new line than we can use -e
+Example:- $echo -e "Hello\nWorld"
+
+153)Write a program which will create beep sound.
+->$echo -e "Hello\a\a\a\aworld"
+
+154)Write a command to change the colour(Make it Red) of word sakshi 
+->echo -e "\e[1;31m sakshi\e[0m "
+
+155)Write a process to create and execute script .
+->Step1:=$vi sleep.sh
+
+Step2:= Press i
+
+Step3:=Write a code
+#!/bin/bash
+echo "a"
+sleep 1
+echo "b"
+sleep 1
+echo "c"
+sleep 1
+echo "d"
+sleep 1
+echo "e"
+sleep 1
+echo "d"
+sleep 1
+echo "e"
+sleep 1
+echo "f"
+sleep 1
+echo "g"
+sleep 1
+echo "h"
+sleep 1
+echo "i"
+sleep 1
+echo "j"
+
+Step4:=Press :wq
+Then hit enter
+
+Step5:=./sleep.sh
+
+156)How to terminate the currently executing process.
+->$ctrl+c
+
+157)How to pause the currently executing process.
+->$ctrl+z
+
+158)How to start the paused process again.
+->$fg
+
+159)How to start the paused process again but in background.
+->$bg
+
+160)Which command is used to monitor the contents of a file in real-time, particularly log files, by displaying the last few lines of the file and 
+continuously updating the display as new lines are added to the file.
+->$tail -f filename
+
+161)Which command is used to list the available signal names or numbers on a Unix-like system. 
+->$kill -l
+
+162)Which  command is used to display detailed information about processes running on a Unix-like system. It provides a full listing of processes in
+a "long" format, showing information such as the process ID (PID), parent process ID (PPID), CPU and memory usage, start time, and command 
+associated with each process.
+->ps -f
+
+163)Alternate to(ctrl+z) stop the currently executing process.
+->$kill -19 PID_NUMBER
+
+164)Alternate to(fg and bg) to resume the currently executing process.
+->$kill -18 PID_NUMBER
+
+165)Alternate to(ctrl+c) terminate the currently executing process.
+->$kill -9 PID_NUMBER
+
+166)Which  command used in Unix-like operating systems to run a command or script that will continue running even after the user logs out or 
+terminates the session. It stands for "no hangup."Give one example
+->Step 1:- vi sleep2.sh
+Step2:-#!/bin/bash
+>number.txt
+for N in {1..1000}
+do
+  echo ${N}>>numbers.txt
+  echo Hello$N
+  sleep 1
+done
+Step3:-chmod u+x sleep2.sh
+Step4:-nohup ./sleep2.sh &
+
+167)How to kill the process?Kill sleep2.sh
+->pkill -f sleep2.sh
+
+168)Which command is used to display RAM status.
+->$free
+
+169)Which command is used to display disk space usage
+->$df or $df -h
+
+170)Which command is used in Unix-like operating systems to estimate file and directory disk usage. Which provides information about the space 
+occupied by files and directories, helping you analyze disk usage on your system.
+->$du -h
+
+171)Declare a variable BASIC,DA,TA,HRA,GROSS assign BASIC as 7000 and find the GROSS salary also display it on terminal.
+->#!/bin/bash
+
+BASIC=70000
+DA=`echo ${BASIC} \*.1 | bc`
+TA=`echo ${BASIC} \*.1 | bc`
+HRA=`echo ${BASIC} \*.1 | bc`
+GROSS=`echo ${BASIC} + ${DA} + ${TA} + ${HRA} | bc`
+
+echo The Gross Salary is  ${GROSS}
+
+172)Write a script using read command.
+->#!/bin/bash
+
+read -p "Enter you salary" SAL
+echo "Your salary is:"${SAL}
+
+173)Which command is used to start debugging mode.
+->$set -x
+
+174)Which command is used to off debugging mode.
+->$set +x
+
+175)Which command is used to list the cron jobs for the current user,which is a time-based job scheduler in Unix-like operating systems, and each 
+user can have their own set of scheduled tasks or jobs.
+->$crontab -l
+
+176)Which command is used to edit the crontab command
+->$crontab -e
+
+177)Write an example of how to use the crontab command to create and edit cron jobs.
+->Step1:-To edit the cron jobs for the current user, use the following command:
+$crontab -e
+
+Step2:-The general format of a cron job line is as follows:
+$* * * * * command or $* * * * */path/to/command
+For example, to schedule a command to run every day at 9:30 AM, you can add the following line:
+$30 9 * * * /home/ec2-userW/to/command
+
+Step3:-To view the updated list of cron jobs, you can use the crontab -l command:
+$crontab -l
+
+178)Write a script to hide password while writing
+->#!/bin/bash
+
+read -p "Enter name:" UNAME
+read -sp "Enter password:" PASSWARD
+
+179)Example of command line argument
+->Step1:- vi ex2.sh
+Step2:-#!/bin/bash
+# Access the first command-line argument
+name=$1
+# Display a greeting message
+echo "Hello, $name! Welcome to Linux."
+Step3:-./ex2.sh sakshi
+
+180)Write a program to concatinate two strings.
+->Step1:-vi ex3.sh
+Step2:-#!/bin/bash+
+
+# Access the first command-line argument
+name=$1
+surname=$2
+
+# Display a greeting message
+echo "Hello," $name $surname" ! Welcome to Linux."
+Step3:-./vi ex3.sh sakshi sawalikar..
+
+181)Use expr to add two whole numbers.
+->$expr 20+30 | bc
+
+182)Use expr to add two decimal numbers
+->expr 20.5+20.5 | bc
+
+183)Use bc two add two whole numbers
+->echo 20+24 | bc
+
+184)Use bc two add 20.5 and 74
+->echo 20.5+74 | bc
+
+185)Write a command to convert decimal to binary.
+->echo "ibase=10;obase=2;47" | bc
+
+186)Write a command to convert decimal to octal.
+->echo "ibase=10;obase=8;47" |bc
+
+187)Write a command to convert decimal to hexadecimal.
+->echo "ibase=10;obase=16;47" | bc
+
+188)Write a program to find area of circle , declare variable pi make it constant .
+->#!/bin/bash
+
+declare -r PI=3.14159
+declare -r MAX_VALUE=100
+
+# Attempting to change the value of a constant will result in an error
+# Uncomment the following line to see the error:
+# PI=3.14
+
+echo "The value of PI is: $PI"
+echo "The maximum value is: $MAX_VALUE"
+
+188)Write a program using if else
+->
+
+189)Write a program using do while
+->#!/bin/bash
+
+# Iterate over a list of names and print a greeting for each
+for N in {1..1000}
+do
+  echo ${N}>>numbers.txt
+  echo Hello$N
+  sleep 1
+done
+
+
+190)Write a program using switch case
+->
+
+191)Write a command to compress a file.
+->$gzip filename
+
+192)Write a command to de-compress a file
+->$gzip -d filename.gz
+----------------------------------------------
+#grep command
+
+fruits.txt
+
+apple
+mango
+banana
+chiku
+watermelon
+Apple
+mangojuice
+chikushake
+melon
+lemon
+papaya
+mosambi
+MELON
+
+193)If u want to search  lines containing word called mango in fruits.txt how will you do it.
+->$grep 'mango' fruits.txt
+
+194)If u want to fetch all lines having melon ignoring the case sensitivity,how will u do it
+->$grep -i 'melon' fruits.txt
+
+195)Now as you can see from above question output if you seach for melon it also show's watermelon,but we just want melon how to do that
+->$grep -w 'melon' fruits.txt
+
+196)Now we want to search only melon word again we want to ignore the case -sensitivity
+->$grep -iw 'melon' fruits.txt
+
+197)Write a command to search a word apple and our output must containg indexing
+->$grep -n 'apple' fruits.txt
+
+198) Write a command to search a word apple ignore the case sensitivity and our output must containg indexing
+->$grep -in 'apple'fruits.txt
+
+199)We want to search create a new txt that doesn't contain melon word
+->$grep -iv 'melon' fruits.txt > new.txt
+
+200)If we want to count the number of lines matching word melon in the above txt called fruits.txt
+->$grep -ic 'melon' fruits.txt
+
+201)Suppose I have a data 
+
+new.txt
+
+sakshi is a girl.
+she is 18 years old.
+sakshi sawalikar is her full name.
+SakShi is cute.
+
+and I just want to print the matched substring not the whole line then,
+->$grep -o 'sakshi' new.txt
+
+202)Consider new.txt only but I now I want to display the data matching the given substring only again ignoring the case sensitivity and the output should 
+be indexed properly.
+->$grep -ino 'sakshi' new.txt
+
+202)Suppose we have txt 
+
+riddle.txt
+
+I thought a thought. But the thought I thought wasn’t the thought I thought I thought. If the thought I thought I thought had been the thought 
+I thought, I wouldn’t have thought I thought.
+
+A}I want to count the number of occurence of word thought 
+->$grep -io 'thought' riddle.txt | wc -l    
+
+B}I want to count the number of lines matching the word thought
+->$grep -ic 'thought' riddle.txt
+
+203)If I want to search 2 words mango and banana 
+->$grep -E 'apple|banana' fruits.txt
+
+204)If I want to print all the words starting from 'a' ignoring case sensitivity
+->$grep -i '^a' fruits.txt
+
+205)If I want to print all the words ending with 'e' ignoring case sensitivity
+->$grep -i 'e$' fruits.txt
+
+206)If I want to print all the words having 'n'  ,ignoring case sensitivity
+->$grep -i '.*e.*' fruits.txt
+
+207)If I want to search a word 'happy' in 4 files f1.txt f2.txt f3.txt f4.txt
+->$grep 'happy' f1.txt f2.txt f3.txt f4.txt
+
+208)If I want to discard 'anjali' word present at the end from emp.txt
+->$grep -i 'Anjali' emp.txt | grep -v 'Anjali$'
+
+209)If I want to print the line having 'usha' name and also wants to print 2 lines before it
+->$grep -B 2 'usha' emp.txt
+
+210)If I want to print the line having 'usha' name and also wants to print 5 lines after it
+->$grep -A 5 'usha' emp.txt
+-----------------------------------------------------------------------------------
+#sed command
+
+fruits.txt
+
+apple
+mango
+banana
+chiku
+watermelon
+Apple
+mangojuice
+chikushake
+melon
+lemon
+papaya
+mosambi
+
+
+211)If you want to print 2 line of fruits.txt 
+->$sed -n '2p' fruits.txt
+
+)If you want to print all the lines in between 3-6 then,
+->$sed -n '3,6 p' fruits.txt
+
+)Now if u want to print 3rd line and 5th line then,
+->$sed -ne '3 p' -e '5 p' fruits.txt
+
+)If u want to print 2-4 lines and 7-9 lines
+->$sed -ne '2,4 p' -e '7,9 p' fruits.txt
+
+)If we want to search chiku and wants to display those line having chiku word
+->$sed -n '/chiku/p' fruits.txt
+
+)If want to search banana and Apple and wants to display those line
+->$sed -ne '/banana/p' -e '/Apple/p' fruits.txt
+
+)If we don't want to display the lines which contain lemon ,
+->$sed '/lemon/d' fruits.txt
+
+)Suppose we have a data file fruits.txt and we want to create a file that will not contain chiku word than,
+->$sed '/chiku/d' fruits.txt > nochiku.txt
+
+)How to delete lines in between 3-6 
+->$sed '3,6 d' fruits.txt
+
+)If we want to add ----------------- before banana line 
+->$sed '/banana/i-------------------' fruits.txt
+
+)If we want to add ----------------- after banana line 
+->$sed '/banana/a-------------------'fruits.txt
+
+)If If we want to add ----------------- before 3-5 line 
+->$sed '3,5 i-------------------' fruits.txt
+
+)Suppose I have a file include.txt and I want to insert data from include.txt to fruits.txt , but there is one condition , I want to insert data after
+word Apple from fruits.txt
+->$sed '/Apple/r include.txt' fruits.txt
+
+)Suppose I want to copy the lines containing chiku word and paste it in some another file.
+->$sed '/chiku/w paste.txt ' fruits.txt
+
+)Suppose I want to replace all the words containing chiku to CHIKUUUU
+->$sed 's/chiku/CHIKUUUU/' fruits.txt
+
+)If I want to display likes whose starting characters are abcd 
+->$sed -n '/^app/p' emp.txt
+
+*****
+)How To Print Only Blank Line Of File.?
+->$sed -n '/^$/p' emp.txt
+
+)Write A Command To Print First And Last Line Using Sed Command?
+->$sed -ne '1 p' -e  '$ p' emp.txt
+
+)Write A Command To Print All Line Except First Line?
+->$sed -n '1! p' emp.txt
+
+)Write A Command Delete All Line Except First Line?
+->$sed ‘1!d’ emp.txt
+
+)Write A Command Remove All Empty Lines
+->$sed '/^$/d' emp.txt
+
+)
+----------------------------------------------------------------------------------------------------
+#awk command
+
+1)awk 'BEGIN{} {} END{}' filename
+middle {} madhe aapan program logic lihito,je pratek row sathi execute hota,BEGIN block cha execution starting la hota tar te initialize karnya
+sathi use hota ,and END block cha execution end la hota.
+2)FS means field separator asta ,like emp.txt madhe sagle data points "," ne separate kele aahet tar te FS aahe.
+3)OFS means output field separator aahe,means ouput madhe ek special symbol ne output define karycha asel tar OFS use karto
+4)NF means NUMBER OF FIELDS asta.Means no of column in short
+5)NR means NUMBER OF ROWS asta
+6)$0 use kela middle {} madhe tar te whole row print karta
+7)$1 $2 ....means column 1 column 2 asa
+8)$NR kela tar te last column cha value print karta karan $ use kela aahe aapan.
+
+emp.txt
+
+adhiraj,manager,account,aurangabad,45000
+sandi,clerk,account,risod,25000
+sakshi,manager,sales,aurangabad,50000
+shruti,manager,account,washim,47000
+deepali,peon,sales,nanded,15000
+shree,clerk,sales,parbhani,23000
+mansi,peon,sales,nagpur,13000
+krushna,director,purchase,savli,80000
+
+)If you simply want to print the whole data from emp.txt file
+->$awk '{print}' emp.txt
+
+)If you have a txt having data of an employees and you just want to display the data of manager 
+->awk '/manager/{print}' emp.txt
+
+)If u have a txt having data of an employees and you want to print the count of number of fields of each row then how will you do it.
+->$awk 'BEGIN{FS=","} {print NF} END{}' emp.txt
+
+)If u want to print whole columns of emp.txt file how will you do it.
+->$awk 'BEGIN{FS=","} {print $0} END{}' emp.txt
+
+)If u want to print the first column of emp.txt file.
+->$awk 'BEGIN{FS=","} {print $1} END{}' emp.txt
+
+)If we want to print the last column of emp.txt file but we don't know the number of columns present in the data then,
+->$awk 'BEGIN{FS=","} {print $NF} END{}' emp.txt
+
+)If we want print the rows no of emp.txt then,
+means if there are 5 rows present then it should print 1  to 5 on separate line
+->$awk 'BEGIN{FS=","} {print NR} END{}' emp.txt
+
+)If we want to give indexing to the data as well as we want to print the whole data and no of fields also then,
+->$awk 'BEGIN{FS=","} {print NR,$0,NF} END{}' emp.txt
+
+)Suppose I have a data like 
+
+adhiraj,manager,account,aurangabad,45000,123
+sandi,clerk,account,risod,25000
+sakshi,manager,sales,aurangabad,50000,458
+shruti,manager,account,washim,47000
+deepali,peon,sales,nanded,15000
+shree,clerk,sales,parbhani,23000
+mansi,peon,sales,nagpur,13000,7888
+krushna,director,purchase,savli,80000
+
+and I want a new data file that will contain all the rows which have 5 fields only.
+
+->$awk 'BEGIN{FS=","} {if(NF==5){print $0}} END{}' emp1.txt > sorteddata.txt
+
+)Consider the above data and consider one case if the no of fields in a row is equal to 5 then print as "Good Record" and if it is equal to 6 print 
+as "Bad Record"
+->$awk 'BEGIN{FS=","}{if(NF==5){print NR,$0,"(Good Record)"} else{print NR,$0,"(Bad Record)"}} END{}' emp1.txt
+
+)If we want to change the delimiter from emp.txt file i.e we want to make | as a delimiter instead of ,
+->$awk 'BEGIN{FS="," ; OFS="|"} {print $1,$2,$3} END{}' emp.txt
+
+)Now we want to display the employees whos salary is greater than 40000,
+->$awk 'BEGIN{FS=","} {if($5 >=40000){print $0}} END{}' emp.txt
+
+)Now we want to calculate the total salary that is sum of all salaries of employee.
+->$awk 'BEGIN{FS=",";TOTAL=0}{TOTAL=TOTAL+$5} END{print "TOTAL :" TOTAL}' emp.txt
+
+)Print the data from emp.txt file ,but there should be 2 blank spaces in between the rows.
+->$awk 'BEGIN{FS=",";ORS="\n\n"}{print $0} END{}' emp.txt
+
+)Suppose if we have data in the form like
+
+adhiraj
+manager 
+account 
+aurangabad 
+45000
+
+sandi 
+clerk 
+account 
+risod 
+25000
+
+sakshi 
+manager 
+sales 
+aurangabad 
+50000
+
+and we want to convert it in the form like
+
+adhiraj manager account aurangabad 45000
+sandi clerk account risod 25000
+sakshi manager sales aurangabad 50000
+
+->$awk 'BEGIN{FS="\n";RS="\n\n"} {print $1,$2,$3,$4,$5} END{}' emp.txt
+
+*****
+)How To Display Even Number Of Records Into One File And Odd Number Of Records Into Another File?
+->awk 'NR % 2 == 0 {print > "even.txt"} NR % 2 != 0 {print > "odd.txt"}' emp.txt
+or
+awk 'BEGIN{FS=","} {if(NR % 2 == 0) {print > "even.txt"} else {print > "odd.txt"}} END{}' emp.txt
+
+) Write A Command To Find The Sum Of Bytes (size Of File) Of All Files In A Directory.?
+->$ls -l | awk 'BEGIN {sum=0} {sum = sum + $5} END {print sum}'
+
+-----------------------------------------------------------------------------------------
+#FIND command ( ./ is current directory )
+
+) How to find a particular text file or directory using the full path.  
+->  $ find /home/ec2-user/moview -name 'abc.txt'
+    
+) How to find particular file or directory in the current directory. 
+-> $ find ./ -name 'abc.txt'
+    
+) How to find a directory starting with name a  in current directory ignoring the case sensitivity ( only directory)
+-> $ find ./ -iname 'a*' -type d
+
+) How to find a file or directory starting with a and having maximum depth 2 means having maximum 2 sub branches in current directory
+-> $ find ./ -iname 'a*' -maxdepth 2
+          
+) -//-  having minimum 2 sub branches.   
+-> $ find ./ -iname 'a*' -mindepth 2                                        
+
+) -//- exact 3 branches
+-> $ find ./ -mindepth 3 -maxdepth 3 -iname 'a*'
+
+) Files more than 2M (2mb) will be redirected to dev/null -> use to discard the data
+-> $find ./ -size +2M 2> /dev/null
+
+) find files created 30 days ago
+-> $ find ./ size +2M -mtime +30 2> /dev/null
+
+) find file created 15 min ago
+-> $ find ./ -mmin -15 2> /dev/null
+
+) find file by inode number 
+-> find ./ -inum 195567
+
+) find empty files and directories
+-> $ find ./ -empty
+
+) create a bucket of empty files
+-> $ find ./ -empty | xargs -I {}
+
+) $ find ./ -empty | xargs -I {} ls -l {}
+
+) how to find empty files and remove them
+-> $ find ./ -empty | xargs -I {} rm -r {}
+
+) how find files created after emp.txt
+-> $ find ./ -newer emp.txt
+
+) how to find files having permission 644
+-> $ find ./ -perm 644
+
+------------------------------------------
+
+)How to see only$ hidden files
+->ls -d .*
+
+
+=============================================================================================================
+Extra Questions
+
+1)What is LILO?
+LILO (Linux Loader) is a boot loader for Linux. It is used to load Linux into memory and start the operating system. LILO can be configured to boot other operating systems as well. LILO is customizable, i.e., if the default configuration is not correct, it can be changed. The config file for LILO is lilo.conf. LILO is also a code snippet that loads PC BIOS into the main memory at the time of starting the computer system.
+
+It handles the following tasks:
+
+Locating Linux kernel
+Identifying other supporting programs and loading them in memory
+Starting the kernel
+The selection of various Kernel images and boot routines is supported by LILO. For this reason, it is known as the boot manager.
+
+
+
+
+
+
